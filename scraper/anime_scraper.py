@@ -46,7 +46,14 @@ def anime_details(anime_url):
     genre_class = driver.find_element(By.CLASS_NAME, "tags")
     genre_items = genre_class.find_elements(By.TAG_NAME, "li")
     genre = [genre_item.text.strip() for genre_item in genre_items]
-    creator = driver.find_elements(By.CLASS_NAME, "CharacterCard__title")[8].text.strip()
+
+    person_profession = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__body")]
+    person_name = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__title")]
+    try:
+        creator_id = person_profession.index("Original Creator")
+        creator = person_name[creator_id]
+    except ValueError:
+        creator = None
 
     anime_contents = {"Name": name,
                       "Media Type": media_type,
@@ -70,13 +77,15 @@ def get_all_anime():
     anime_data = []
     driver = webdriver.Chrome()
 
-    start_page, end_page = 1, 654
+    # start_page, end_page = 1, 654
+    start_page, end_page = 1, 2
 
     for page_id in range(start_page, end_page):
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
         driver.get(url)
 
         anime_links = driver.find_elements(By.CLASS_NAME, "tooltip")
+        print("")
 
         for idx, row in enumerate(anime_links[2:]):
             anime_link = row.get_attribute("href")
