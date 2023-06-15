@@ -80,10 +80,11 @@ def get_all_anime():
 
         for idx, row in enumerate(anime_links[2:]):
             anime_link = row.get_attribute("href")
+            print(f"({idx}) Running ... {anime_link}")
             anime_content = anime_details(anime_link)
             anime_data.append(anime_content)
 
-        print(f"Collection in page {page_id}: {len(anime_links[2:])}")
+        print(f"\nCollection in page {page_id}: {len(anime_links[2:])}")
         print(f"Collection in total: {len(anime_data)}\n")
 
     driver.close()
