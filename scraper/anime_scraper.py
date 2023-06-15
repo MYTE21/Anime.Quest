@@ -26,10 +26,11 @@ def anime_details(anime_url):
         start_year = media_info[2].split("-")[0].strip()
         end_year = media_info[2].split("-")[1].strip()
         end_year = end_year if end_year != "?" else None
+        ongoing = True if end_year is None else False
     else:
         start_year = media_info[2].strip()
         end_year = None
-    ongoing = True if end_year is None else False
+        ongoing = False
 
     if len(media_info) == 6:
         release_season = media_info[3].split(" ")[0].strip()
