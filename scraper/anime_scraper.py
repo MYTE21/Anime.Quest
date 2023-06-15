@@ -7,10 +7,8 @@ columns = ["Name", "Media Type", "Episodes", "Studio", "Start Year", "End Year",
            "Rank", "Members", "Genre", "Creator"]
 
 
-def anime_details(anime_id):
+def anime_details(anime_url):
     driver = webdriver.Chrome()
-
-    anime_url = f"https://www.anime-planet.com{anime_id}/"
     driver.get(anime_url)
 
     name = driver.find_element(By.TAG_NAME, "h1").text.strip()
@@ -59,7 +57,6 @@ def anime_details(anime_id):
                       "Members": members,
                       "Genre": genre,
                       "Creator": creator}
-
     driver.close()
 
     return anime_contents
@@ -68,29 +65,26 @@ def anime_details(anime_id):
 def get_all_anime():
     driver = webdriver.Chrome()
 
-    start_page, end_page = 1, 51
-    anime_list = []
+    start_page, end_page = 1, 2
 
     for page_id in range(start_page, end_page):
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
         driver.get(url)
 
-        anime_names = driver.find_elements(By.CLASS_NAME, "cardName")
+        anime_links = driver.find_elements(By.CLASS_NAME, "tooltip")
 
-        for idx, row in enumerate(anime_names):
-            anime_name = row.text
-            anime_list.append(anime_name)
-
-    print(len(anime_list))
+        for idx, row in enumerate(anime_links[2:]):
+            anime_link = row.get_attribute("href")
+            print("<", "-" * 20, ">")
+            print(f"({idx}) ", anime_link)
+            anime_content = anime_details(anime_link)
+            print(anime_content)
+            print("<", "-" * 20, ">")
+            if idx == 3:
+                break
 
     driver.close()
 
 
 if __name__ == "__main__":
-    ds_id = "/anime/demon-slayer-kimetsu-no-yaiba-entertainment-district-arc"
-    aot_id = "/anime/attack-on-titan-the-final-season-the-final-chapters"
-    fb_id = "/anime/fruits-basket-the-final-season"
-    op_id = "/anime/one-piece"
-
-    details = anime_details(ds_id)
-    print(details)
+    get_all_anime()
