@@ -83,6 +83,9 @@ def get_all_anime():
             anime_content = anime_details(anime_link)
             anime_data.append(anime_content)
 
+        print(f"Collection in page {page_id}: {len(anime_links[2:])}")
+        print(f"Collection in total: {len(anime_data)}\n")
+
     driver.close()
     anime_data_save(anime_data)
 
@@ -100,6 +103,9 @@ def anime_data_save(anime_data):
 def anime_scraping_main():
     start_time = time.time()
 
+    print("Starting........")
+    time.sleep(2)
+    print("Scraping........!")
     # Get all the anime data
     get_all_anime()
 
