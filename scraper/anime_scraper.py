@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import re
+import pandas as pd
+import os
+import time
 
 
 columns = ["Name", "Media Type", "Episodes", "Studio", "Start Year", "End Year", "Ongoing", "Release Season", "Rating",
@@ -63,9 +66,10 @@ def anime_details(anime_url):
 
 
 def get_all_anime():
+    anime_data = []
     driver = webdriver.Chrome()
 
-    start_page, end_page = 1, 2
+    start_page, end_page = 1, 654
 
     for page_id in range(start_page, end_page):
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
@@ -75,16 +79,35 @@ def get_all_anime():
 
         for idx, row in enumerate(anime_links[2:]):
             anime_link = row.get_attribute("href")
-            print("<", "-" * 20, ">")
-            print(f"({idx}) ", anime_link)
             anime_content = anime_details(anime_link)
-            print(anime_content)
-            print("<", "-" * 20, ">")
-            if idx == 3:
-                break
+            anime_data.append(anime_content)
 
     driver.close()
+    anime_data_save(anime_data)
+
+
+def anime_data_save(anime_data):
+    if not os.path.isfile("../data/raw_data/anime_data.csv"):
+        df = pd.DataFrame(data=anime_data, columns=columns)
+        df.to_csv("../data/raw_data/anime_data.csv", index=False)
+        print(f"Anime data saved as 'anime_data.csv' in '../data/raw_data/' folder..!")
+    else:
+        print(f"Not creating a new file.. Already exists anime data as 'anime_data.csv' in "
+              f"'../data/raw_data/' folder..!")
+
+
+def anime_scraping_main():
+    start_time = time.time()
+
+    # Get all the anime data
+    get_all_anime()
+
+    end_time = time.time()
+
+    running_time = end_time - start_time
+    minutes = (running_time / 60)
+    print("Running time (in minutes): {:.2f}".format(minutes))
 
 
 if __name__ == "__main__":
-    get_all_anime()
+    anime_scraping_main()
