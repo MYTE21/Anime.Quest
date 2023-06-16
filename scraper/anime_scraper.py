@@ -51,13 +51,37 @@ def get_media_year_season(media_info):
     return start_year, end_year, ongoing, season
 
 
+def get_creator_id(person_profession, text):
+    for i, person in enumerate(person_profession):
+        if text in person:
+            return i
+
+    return -1
+
+
+def get_creator(driver):
+    person_profession = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__body")]
+    person_name = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__title")]
+
+    creator_index = get_creator_id(person_profession, "Original Creator")
+    director_index = get_creator_id(person_profession, "Director")
+
+    if creator_index != -1:
+        creator = person_name[creator_index]
+    elif director_index != -1:
+        creator = person_name[director_index]
+    else:
+        creator = None
+
+    return creator
+
+
 def anime_details(anime_url):
     driver = webdriver.Chrome()
     driver.get(anime_url)
 
     name = driver.find_element(By.TAG_NAME, "h1").text.strip()
 
-    # ? Media info re-foment
     media_info = get_media_info(driver)
 
     media_type, episodes = get_media_type_episodes(media_info)
@@ -69,7 +93,6 @@ def anime_details(anime_url):
 
     rank_data = media_info[4].split("#")
     rank = None if len(rank_data) == 1 else rank_data[1].strip()
-    # ? Media info re-foment
 
     members = driver.find_element(By.CLASS_NAME, "sidebarStats").text.split("\n")[1].split(" ")[0].replace(",", "")
 
@@ -77,14 +100,7 @@ def anime_details(anime_url):
     genre_items = genre_class.find_elements(By.TAG_NAME, "li")
     genre = [genre_item.text.strip() for genre_item in genre_items]
 
-    person_profession = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__body")]
-    person_name = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__title")]
-    try:
-        # TODO: If person_profession contains 'Original Creator' partially that should be acceptable
-        creator_id = person_profession.index("Original Creator")
-        creator = person_name[creator_id]
-    except ValueError:
-        creator = None
+    creator = get_creator(driver)
 
     anime_contents = {"Name": name,
                       "Media Type": media_type,
