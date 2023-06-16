@@ -96,9 +96,12 @@ def anime_details(anime_url):
 
     members = driver.find_element(By.CLASS_NAME, "sidebarStats").text.split("\n")[1].split(" ")[0].replace(",", "")
 
-    genre_class = driver.find_element(By.CLASS_NAME, "tags")
-    genre_items = genre_class.find_elements(By.TAG_NAME, "li")
-    genre = [genre_item.text.strip() for genre_item in genre_items]
+    try:
+        genre_class = driver.find_element(By.CLASS_NAME, "tags")
+        genre_items = genre_class.find_elements(By.TAG_NAME, "li")
+        genre = [genre_item.text.strip() for genre_item in genre_items]
+    except Exception as e:
+        genre = []
 
     creator = get_creator(driver)
 
