@@ -10,36 +10,66 @@ columns = ["Name", "Media Type", "Episodes", "Studio", "Start Year", "End Year",
            "Rank", "Members", "Genre", "Creator"]
 
 
+def get_media_info(driver):
+    media_section = driver.find_elements(By.CLASS_NAME, "pure-g")[1]
+    media_infos = media_section.find_elements(By.CLASS_NAME, "pure-1")
+    return [media_info.text for media_info in media_infos]
+
+
+def get_media_type_episodes(media_info):
+    media_type_episode = media_info[0].split("(")
+    if len(media_type_episode) == 2:
+        media_type = media_type_episode[0].strip()
+        episodes_string = media_type_episode[1].strip(" ()")
+        episodes = re.findall(r"\d+", episodes_string)[0]
+    else:
+        media_type = media_type_episode[0].strip()
+        episodes = None
+
+    return media_type, episodes
+
+
+def get_media_year_season(media_info):
+    media_year_season = media_info[2].split("\n")
+    if len(media_year_season) == 2:
+        media_year = media_year_season[0]
+        season = media_year_season[1].split(" ")[0].strip()
+    else:
+        media_year = media_year_season[0]
+        season = None
+
+    if len(media_year.split("-")) == 2:
+        start_year = media_year.split("-")[0].strip()
+        end_year = media_year.split("-")[1].strip()
+        end_year = end_year if end_year != "?" else None
+        ongoing = True if end_year is None else False
+    else:
+        start_year = None if media_year.strip() == "TBA" else media_year.strip()
+        end_year = None
+        ongoing = False
+
+    return start_year, end_year, ongoing, season
+
+
 def anime_details(anime_url):
     driver = webdriver.Chrome()
     driver.get(anime_url)
 
     name = driver.find_element(By.TAG_NAME, "h1").text.strip()
 
-    media_info = driver.find_elements(By.CLASS_NAME, "pure-g")[1].text.split("\n")
-    media_type = media_info[0].split("(")[0].strip()
-    episodes_string = media_info[0].split("(")[1].strip(" ()")
-    episodes = re.findall(r"\d+", episodes_string)[0]
+    # ? Media info re-foment
+    media_info = get_media_info(driver)
+
+    media_type, episodes = get_media_type_episodes(media_info)
     studio = [studio_name.strip() for studio_name in media_info[1].split(",")]
+    start_year, end_year, ongoing, release_season = get_media_year_season(media_info)
 
-    if len(media_info[2].split("-")) == 2:
-        start_year = media_info[2].split("-")[0].strip()
-        end_year = media_info[2].split("-")[1].strip()
-        end_year = end_year if end_year != "?" else None
-        ongoing = True if end_year is None else False
-    else:
-        start_year = media_info[2].strip()
-        end_year = None
-        ongoing = False
+    rating_data = media_info[3].split(" ")[0].strip()
+    rating = None if rating_data == "" else rating_data
 
-    if len(media_info) == 6:
-        release_season = media_info[3].split(" ")[0].strip()
-        rating = media_info[4].split(" ")[0].strip()
-        rank = media_info[5].split("#")[1].strip()
-    else:
-        release_season = None
-        rating = media_info[3].split(" ")[0].strip()
-        rank = media_info[4].split("#")[1].strip()
+    rank_data = media_info[4].split("#")
+    rank = None if len(rank_data) == 1 else rank_data[1].strip()
+    # ? Media info re-foment
 
     members = driver.find_element(By.CLASS_NAME, "sidebarStats").text.split("\n")[1].split(" ")[0].replace(",", "")
 
