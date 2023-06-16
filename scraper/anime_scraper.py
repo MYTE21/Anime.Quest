@@ -50,6 +50,7 @@ def anime_details(anime_url):
     person_profession = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__body")]
     person_name = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__title")]
     try:
+        # TODO: If person_profession contains 'Original Creator' partially that should be acceptable
         creator_id = person_profession.index("Original Creator")
         creator = person_name[creator_id]
     except ValueError:
@@ -77,15 +78,14 @@ def get_all_anime():
     anime_data = []
     driver = webdriver.Chrome()
 
-    # start_page, end_page = 1, 654
-    start_page, end_page = 1, 2
+    start_page, end_page = 1, 654
 
     for page_id in range(start_page, end_page):
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
         driver.get(url)
 
         anime_links = driver.find_elements(By.CLASS_NAME, "tooltip")
-        print("")
+        print("#PAGE: ", page_id)
 
         for idx, row in enumerate(anime_links[2:]):
             anime_link = row.get_attribute("href")
