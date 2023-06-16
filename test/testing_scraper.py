@@ -67,11 +67,48 @@ def test_anime_details(anime_url):
     rank = None if len(rank_data) == 1 else rank_data[1].strip()
     print("rank: ", rank)
 
+    driver.close()
+
+
+def test_creator_index(person_profession, text):
+    for i, person in enumerate(person_profession):
+        if text in person:
+            return i
+
+    return -1
+
+
+def test_creator(anime_url):
+    driver = webdriver.Chrome()
+    driver.get(anime_url)
+
+    name = driver.find_element(By.TAG_NAME, "h1").text.strip()
+
+    person_profession = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__body")]
+    person_name = [x.text for x in driver.find_elements(By.CLASS_NAME, "CharacterCard__title")]
+
+    creator_index = test_creator_index(person_profession, "Original Creator")
+    director_index = test_creator_index(person_profession, "Director")
+
+    if creator_index != -1:
+        creator = person_name[creator_index]
+    elif director_index != -1:
+        creator = person_name[director_index]
+    else:
+        creator = None
+
+    driver.close()
+
+    print("name: ", name)
+    print("creator: ", creator)
+    print("-" * 30)
+
 
 if __name__ == "__main__":
     urls = [
         "https://www.anime-planet.com/anime/fullmetal-alchemist-brotherhood",
         "https://www.anime-planet.com/anime/fruits-basket-the-final-season",
+        "https://www.anime-planet.com/anime/bleach-thousand-year-blood-war",
         "https://www.anime-planet.com/anime/attack-on-titan-the-final-season-the-final-chapters",
         "https://www.anime-planet.com/anime/yawaraka-atom",
         "https://www.anime-planet.com/anime/eggroy",
@@ -79,5 +116,5 @@ if __name__ == "__main__":
     ]
 
     for idx, url in enumerate(urls):
-        print(f"({idx + 1})\n")
-        print(anime_details(url))
+        print(f"({idx + 1})")
+        test_creator(url)
