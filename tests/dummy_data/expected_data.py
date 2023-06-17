@@ -6,5 +6,6 @@ anime_info = [
     {'Name': 'Yawaraka Atom', 'Media Type': 'Web', 'Episodes': '7', 'Studio': ['Fanworks'], 'Start Year': '2007', 'End Year': '2008', 'Ongoing': False, 'Release Season': None, 'Rating': None, 'Rank': None, 'Members': '54', 'Genre': ['Comedy', 'Parody', 'Short Episodes'], 'Creator': 'Rareko'},
     {'Name': 'EggRoy', 'Media Type': 'TV', 'Episodes': '104', 'Studio': [''], 'Start Year': '2019', 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': None, 'Rank': None, 'Members': '48', 'Genre': ['Anthropomorphic', 'Family Friendly', 'Food Protagonists', 'Korean Animation', 'Non-Human Protagonists', 'Short Episodes'], 'Creator': None},
     {'Name': 'Hizukuri', 'Media Type': 'Other', 'Episodes': None, 'Studio': [''], 'Start Year': None, 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': None, 'Rank': None, 'Members': '607', 'Genre': ['Adventure', 'Sci Fi', 'Original Work'], 'Creator': 'Naoki MATSUURA'},
-    {'Name': 'YOASOBI: Idol', 'Media Type': 'Music Video', 'Episodes': '1', 'Studio': ['Doga Kobo'], 'Start Year': '2023', 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': '4.339', 'Rank': '105', 'Members': '1163', 'Genre': [], 'Creator': 'Naoya NAKAYAMA'}
+    {'Name': 'YOASOBI: Idol', 'Media Type': 'Music Video', 'Episodes': '1', 'Studio': ['Doga Kobo'], 'Start Year': '2023', 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': '4.339', 'Rank': '105', 'Members': '1163', 'Genre': [], 'Creator': 'Naoya NAKAYAMA'},
+    {}
 ]

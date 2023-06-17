@@ -6,5 +6,6 @@ urls = [
         "https://www.anime-planet.com/anime/yawaraka-atom",
         "https://www.anime-planet.com/anime/eggroy",
         "https://www.anime-planet.com/anime/hizukuri",
-        "https://www.anime-planet.com/anime/yoasobi-idol"
+        "https://www.anime-planet.com/anime/yoasobi-idol",
+        "https://www.anime-planet.com/anime/xxx-holic-rou"
 ]
