@@ -142,14 +142,15 @@ def get_all_anime():
             anime_content = anime_details(anime_link)
             anime_data.append(anime_content)
 
-        if page_id % 10 == 0:
-            print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 30, "\n")
-            anime_data_save(anime_data)
-            print("Saved ...!")
-            anime_data.clear()
+        print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 30, "\n")
+        total_anime_cnt = anime_data_save(anime_data)
+        print("Saved ...!")
+        anime_data.clear()
+
+        time.sleep(2)
 
         print(f"\nCollection in page {page_id}: {len(anime_links[2:])}")
-        print(f"Collection in total: {len(anime_data)}\n")
+        print(f"Collection in total: {total_anime_cnt}\n")
 
     driver.close()
     anime_data_save(anime_data)
@@ -161,12 +162,14 @@ def anime_data_save(anime_data):
         df = pd.DataFrame(data=anime_data, columns=columns)
         df.to_csv("../data/raw_data/anime_data.csv", index=False)
         print(f"Anime data saved as 'anime_data.csv' in '../data/raw_data/' folder..!")
+        return df.shape[0]
     else:
         new_df = pd.DataFrame(data=anime_data, columns=columns)
         ex_df = pd.read_csv("../data/raw_data/anime_data.csv")
         combine_df = pd.concat([ex_df, new_df], ignore_index=True)
         combine_df.to_csv("../data/raw_data/anime_data.csv", index=False)
         print("Uploading new data ...")
+        return combine_df.shape[0]
 
 
 def anime_scraping_main():
