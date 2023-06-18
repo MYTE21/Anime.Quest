@@ -7,5 +7,5 @@ anime_info = [
     {'Name': 'EggRoy', 'Media Type': 'TV', 'Episodes': '104', 'Studio': [''], 'Start Year': '2019', 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': None, 'Rank': None, 'Members': '48', 'Genre': ['Anthropomorphic', 'Family Friendly', 'Food Protagonists', 'Korean Animation', 'Non-Human Protagonists', 'Short Episodes'], 'Creator': None},
     {'Name': 'Hizukuri', 'Media Type': 'Other', 'Episodes': None, 'Studio': [''], 'Start Year': None, 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': None, 'Rank': None, 'Members': '607', 'Genre': ['Adventure', 'Sci Fi', 'Original Work'], 'Creator': 'Naoki MATSUURA'},
     {'Name': 'YOASOBI: Idol', 'Media Type': 'Music Video', 'Episodes': '1', 'Studio': ['Doga Kobo'], 'Start Year': '2023', 'End Year': None, 'Ongoing': False, 'Release Season': None, 'Rating': '4.339', 'Rank': '105', 'Members': '1163', 'Genre': [], 'Creator': 'Naoya NAKAYAMA'},
-    {}
+    {'Name': 'xxxHOLiC Rou', 'Media Type': 'OVA', 'Episodes': '2', 'Studio': ['Production I.G'], 'Start Year': '2010', 'End Year': '2011', 'Ongoing': False, 'Release Season': None, 'Rating': '4.153', 'Rank': '424', 'Members': '12343', 'Genre': ['Drama', 'Seinen', 'Japanese Mythology', 'Supernatural', 'Based on a Manga'], 'Creator': 'CLAMP'}
 ]
