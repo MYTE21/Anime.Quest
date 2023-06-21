@@ -158,16 +158,18 @@ def get_all_anime():
 
 
 def anime_data_save(anime_data):
-    if not os.path.isfile("../data/raw_data/anime_data.csv"):
+    path = os.path.join("./data/raw_data", "anime_data.csv")
+    
+    if not os.path.isfile(path):
         df = pd.DataFrame(data=anime_data, columns=columns)
-        df.to_csv("../data/raw_data/anime_data.csv", index=False)
+        df.to_csv(path, index=False)
         print(f"Anime data saved as 'anime_data.csv' in '../data/raw_data/' folder..!")
         return df.shape[0]
     else:
         new_df = pd.DataFrame(data=anime_data, columns=columns)
-        ex_df = pd.read_csv("../data/raw_data/anime_data.csv")
+        ex_df = pd.read_csv(path)
         combine_df = pd.concat([ex_df, new_df], ignore_index=True)
-        combine_df.to_csv("../data/raw_data/anime_data.csv", index=False)
+        combine_df.to_csv(path, index=False)
         print("Uploading new data ...")
         return combine_df.shape[0]
 
