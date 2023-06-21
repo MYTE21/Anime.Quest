@@ -4,6 +4,7 @@ import re
 import pandas as pd
 import os
 import time
+import json
 
 
 columns = ["Name", "Media Type", "Episodes", "Studio", "Start Year", "End Year", "Ongoing", "Release Season", "Rating",
@@ -127,7 +128,7 @@ def get_all_anime():
     anime_data = []
     driver = webdriver.Chrome()
 
-    start_page, end_page = 1, 654
+    start_page, end_page = read_page_no()
 
     for page_id in range(start_page, end_page):
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
@@ -141,7 +142,8 @@ def get_all_anime():
             print(f"({idx}) Running ... {anime_link}")
             anime_content = anime_details(anime_link)
             anime_data.append(anime_content)
-
+        
+        write_page_no(page_id + 1, end_page)
         print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 30, "\n")
         total_anime_cnt = anime_data_save(anime_data)
         print("Saved ...!")
@@ -157,9 +159,22 @@ def get_all_anime():
     print("Congratulations, Anime data uploaded ...!")
 
 
+def read_page_no():
+    with open("./scraper/page_pointer.json", "r") as file:
+        data = json.load(file)
+    
+    return data["start"], data["end"]
+
+
+def write_page_no(start, end):
+    with open("./scraper/page_pointer.json", "w") as file:
+            data = {"start": start, "end": end}
+            json.dump(data, file)
+
+
 def anime_data_save(anime_data):
     path = os.path.join("./data/raw_data", "anime_data.csv")
-    
+
     if not os.path.isfile(path):
         df = pd.DataFrame(data=anime_data, columns=columns)
         df.to_csv(path, index=False)
