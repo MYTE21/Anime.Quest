@@ -10,3 +10,13 @@ Finding fascinating information about anime on the anime-planet website.
 pip install -r requirements.txt
 ```
 ---
+
+## Tableau
+### Processed Anime Data
+1. Media Type
+2. Top 20 Anime With The Most Episodes
+3. Anime Production Count by Year
+4. Anime Production by Release Season
+5. Top 15 TV Anime
+6. Top 20 Popular Anime 
+7. 
