@@ -129,8 +129,10 @@ def get_all_anime():
     driver = webdriver.Chrome()
 
     start_page, end_page = read_page_no()
+    total_running_time = 0
 
     for page_id in range(start_page, end_page):
+        start_time = time.time()
         url = f"https://www.anime-planet.com/anime/all?page={page_id}"
         driver.get(url)
 
@@ -144,19 +146,28 @@ def get_all_anime():
             anime_data.append(anime_content)
         
         write_page_no(page_id + 1, end_page)
-        print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 30, "\n")
+        print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 50, "\n")
+        col_in_page = len(anime_data)
         total_anime_cnt = anime_data_save(anime_data)
         print("Saved ...!")
         anime_data.clear()
 
         time.sleep(2)
 
-        print(f"\nCollection in page {page_id}: {len(anime_links[2:])}")
+        print(f"\nTotal Anime in page {page_id}: {len(anime_links[2:])}")
+        print(f"Collection from page {page_id}: {col_in_page}")
         print(f"Collection in total: {total_anime_cnt}\n")
 
+        end_time = time.time()
+
+        running_time = end_time - start_time
+        minutes = (running_time / 60)
+        total_running_time += minutes
+        print(f"({page_id}) ", "Running time (in minutes): {:.2f}".format(minutes))
+        print("Total Running time (in minutes): {:.2f}".format(total_running_time))
+
     driver.close()
-    anime_data_save(anime_data)
-    print("Congratulations, Anime data uploaded ...!")
+    print("Congratulations, All Anime data uploaded ...!")
 
 
 def read_page_no():
@@ -178,31 +189,23 @@ def anime_data_save(anime_data):
     if not os.path.isfile(path):
         df = pd.DataFrame(data=anime_data, columns=columns)
         df.to_csv(path, index=False)
-        print(f"Anime data saved as 'anime_data.csv' in '../data/raw_data/' folder..!")
+        print(f"Anime data saved as 'anime_data.csv' in './data/raw_data/' folder..!")
         return df.shape[0]
     else:
         new_df = pd.DataFrame(data=anime_data, columns=columns)
         ex_df = pd.read_csv(path)
         combine_df = pd.concat([ex_df, new_df], ignore_index=True)
         combine_df.to_csv(path, index=False)
-        print("Uploading new data ...")
+        print("Uploading new data ...!")
         return combine_df.shape[0]
 
 
 def anime_scraping_main():
-    start_time = time.time()
-
-    print("Starting........")
+    print("Starting.......!")
     time.sleep(2)
     print("Scraping........!")
     # Get all the anime data
     get_all_anime()
-
-    end_time = time.time()
-
-    running_time = end_time - start_time
-    minutes = (running_time / 60)
-    print("Running time (in minutes): {:.2f}".format(minutes))
 
 
 if __name__ == "__main__":
