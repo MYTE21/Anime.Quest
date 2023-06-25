@@ -1,12 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
+import os
 
 
 columns = ["Rank", "Country", "Population", "Percentage of People Watching", "Number of People Watching"]
 
 
-def anime_watch_data(anime_url):
+def anime_watch_data():
+    anime_url = "https://skdesu.com/en/list-of-countries-that-watch-the-most-anime/"
+
     driver = webdriver.Chrome()
     driver.get(anime_url)
 
@@ -40,9 +43,16 @@ def anime_watch_data(anime_url):
 
 
 def anime_watch_data_save():
-    anime_url = "https://skdesu.com/en/list-of-countries-that-watch-the-most-anime/"
-    awd = anime_watch_data(anime_url)
-    print(awd)
+    awd = anime_watch_data()
+    path = os.path.join("./data/raw_data", "anime_watch_data.csv")
+
+    if not os.path.isfile(path):
+        df = pd.DataFrame(data=awd, columns=columns)
+        df.to_csv(path, index=False)
+        print(f"Anime Watch data saved as 'anime_watch_data.csv' in './data/raw_data/' folder..!")
+        return df.shape[0]
+    else:
+        print("File already exists ..!")
 
 
 if __name__ == "__main__":
