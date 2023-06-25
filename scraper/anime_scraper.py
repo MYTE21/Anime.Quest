@@ -135,7 +135,7 @@ def get_all_anime():
         driver.get(url)
 
         anime_links = driver.find_elements(By.CLASS_NAME, "tooltip")
-        print("\n #PAGE: ", page_id, "\n", "=" * 120)
+        print("\n #PAGE: ", page_id, "\n", "=" * 100)
 
         for idx, row in enumerate(anime_links[2:]):
             anime_link = row.get_attribute("href")
