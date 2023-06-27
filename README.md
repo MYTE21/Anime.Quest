@@ -11,6 +11,8 @@ pip install -r requirements.txt
 ```
 ---
 
+download country dataset: [Anime Top By Country Dataset](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#)
+
 ## Tableau
 ### Processed Anime Data
 1. Media Type
