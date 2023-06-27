@@ -44,7 +44,7 @@ def anime_watch_data():
 
 def anime_watch_data_save():
     awd = anime_watch_data()
-    path = os.path.join("./data/raw_data", "anime_watch_data.csv")
+    path = os.path.join("./data/raw_data", "anime_watching_data.csv")
 
     if not os.path.isfile(path):
         df = pd.DataFrame(data=awd, columns=columns)
