@@ -44,15 +44,15 @@ def anime_watch_data():
 
 def anime_watch_data_save():
     awd = anime_watch_data()
-    path = os.path.join("./data/raw_data", "anime_watching_data.csv")
+    path = os.path.join("../data/raw_data", "anime_watching_data.csv")
 
     if not os.path.isfile(path):
         df = pd.DataFrame(data=awd, columns=columns)
         df.to_csv(path, index=False)
-        print(f"Anime Watch data saved as 'anime_watch_data.csv' in './data/raw_data/' folder..!")
+        print(f" 🎉 Anime Watch data saved as 'anime_watch_data.csv' in '../data/raw_data/' folder..!")
         return df.shape[0]
     else:
-        print("File already exists ..!")
+        print(" 📁 File already exists ..!")
 
 
 if __name__ == "__main__":
