@@ -10,8 +10,9 @@ Finding fascinating information about anime on the anime-planet website.
 pip install -r requirements.txt
 ```
 ---
-
-download country dataset: [Anime Top By Country Dataset](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#)
+1. Anime Data: Scrapped by running `anime_scraper.py` file.
+2. Country Data: Download from [Anime Top By Country Dataset](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#) website.
+3. Watching Data: Scrapped by running `anime_watching_scraper.py` file.
 
 ## Tableau
 ### Processed Anime Data
