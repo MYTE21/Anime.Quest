@@ -6,7 +6,6 @@ import os
 import time
 import json
 
-
 columns = ["Name", "Media Type", "Episodes", "Studio", "Start Year", "End Year", "Ongoing", "Release Season", "Rating",
            "Rank", "Members", "Genre", "Creator"]
 
@@ -144,7 +143,7 @@ def get_all_anime():
             print(f"({idx}) Running ... {anime_link}")
             anime_content = anime_details(anime_link)
             anime_data.append(anime_content)
-        
+
         write_page_no(page_id + 1, end_page)
         print("\n", "+" * 50, f"\n + Saving... till page no. {page_id} ...\n", "+" * 50, "\n")
         col_in_page = len(anime_data)
@@ -171,25 +170,25 @@ def get_all_anime():
 
 
 def read_page_no():
-    with open("./scraper/page_pointer.json", "r") as file:
+    with open("../scraper/page_pointer.json", "r") as file:
         data = json.load(file)
-    
+
     return data["start"], data["end"]
 
 
 def write_page_no(start, end):
-    with open("./scraper/page_pointer.json", "w") as file:
-            data = {"start": start, "end": end}
-            json.dump(data, file)
+    with open("../scraper/page_pointer.json", "w") as file:
+        data = {"start": start, "end": end}
+        json.dump(data, file)
 
 
 def anime_data_save(anime_data):
-    path = os.path.join("./data/raw_data", "anime_data.csv")
+    path = os.path.join("../data/raw_data", "anime_data.csv")
 
     if not os.path.isfile(path):
         df = pd.DataFrame(data=anime_data, columns=columns)
         df.to_csv(path, index=False)
-        print(f"Anime data saved as 'anime_data.csv' in './data/raw_data/' folder..!")
+        print(f"Anime data saved as 'anime_data.csv' in '../data/raw_data/' folder..!")
         return df.shape[0]
     else:
         new_df = pd.DataFrame(data=anime_data, columns=columns)
