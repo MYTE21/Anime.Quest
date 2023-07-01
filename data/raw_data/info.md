@@ -1,0 +1,1 @@
+`raw data` collected from scraping anime planet website.

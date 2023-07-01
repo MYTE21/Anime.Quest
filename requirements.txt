@@ -1,0 +1,8 @@
+pandas==2.0.2
+selenium==4.10.0
+pytest==7.3.2
+jupyter==1.0.0
+matplotlib==3.7.1
+missingno==0.5.2
+plotly-express==0.4.1
+kaleido==0.2.1
