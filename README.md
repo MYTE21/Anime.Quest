@@ -75,3 +75,5 @@ contains a visualization of those results. Here, we list our findings in bullet 
    python scraper/anime_scraper.py
    python scraper/anime_watching_scraper.py
     ```
+
+# TODO: Implement Thread, make a parent runner, make the readme more user friendly.
