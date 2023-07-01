@@ -40,6 +40,16 @@ contains a visualization of those results. Here, we list our findings in bullet 
 4. The top 3 countries where anime is watched the most are `Japan`, `the US`, and `the Philippines`.
 5. Production of anime drastically rose after the year 2000 and `peaked in 2018`. The second and third most productive years for anime production are, respectively, 2017 and 2021.
 
+### Anime: Top-Notch
+1. `Sazae-san` has 2,706 episodes total, which is the most ever cast.
+2. The most popular anime series are `Naruto`, `Attach on Titan`, and `Fullmetal Alchemist: Brotherhood`.
+3. The majority of the top 15 TV anime fall under the area of `Action`.
+
+### Anime: Global View
+1. Considering the top 5 anime creators, we can find that the top genre of their writing is `Adventure`. There is also `Action` and `Mystery`.
+2. The most popular genres of anime overall are `Action`, `Comedy`, `Drama`, and `Adventure`.
+3. Most of the anime-watching countries watch `Naruto` and `Pokemon`.
+
 
 
 
