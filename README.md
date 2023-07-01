@@ -1,4 +1,5 @@
-# Anime Quest {#anime-quest}
+`🧶 Active`
+# Anime Quest
 [Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling, 
 creative sensibilities, and cultural allegiances, making it a well-liked and significant form of entertainment all 
 around the world. It was created in Japan and has since spread throughout the world.
@@ -22,6 +23,12 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 
 1. **Exploratory Data Analysis**: Analyzing the data thoroughly and utilizing visual means to learn various data characteristics.
 2. **Automatic testing** of the scraper files.
+
+## Other Parts of the Project
+1. Tableau Public Dashboard: [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link)
+2. Scrapped Dataset: [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
+
+## Findings and Observations
 
 
 
