@@ -29,6 +29,16 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 2. **Automatic testing** of the scraper files.
 
 ## Findings and Observations
+Our investigations and observations can be divided Into `3` *distinct categories*. 
+The tableau, [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link), 
+contains a visualization of those results. Here, we list our findings in bullet points for discussion. Let's get started.
+
+### Anime: General Idea
+1. The most common form of media for anime production is `TV`.
+2. The most successful anime production company is `Toei Animation`.
+3. `Spring` season marks the release of more than 30% of anime, with `Fall` coming in slightly behind.
+4. The top 3 countries where anime is watched the most are `Japan`, `the US`, and `the Philippines`.
+5. Production of anime drastically rose after the year 2000 and `peaked in 2018`. The second and third most productive years for anime production are, respectively, 2017 and 2021.
 
 
 
@@ -44,9 +54,6 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 
 
 
-
-
-Finding fascinating information about anime on the anime-planet website.
 
 ## Used technologies
 * python 3.11
