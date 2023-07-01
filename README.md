@@ -12,6 +12,10 @@ This public project is called Anime Quest, which used the [Selenium Python](http
 to extract anime information from the [Anime Planet](https://anime-planet.com/) website. After processing the dataset,
 [Tableau Public](https://public.tableau.com/app/discover) is used to produce visualizations.
 
+## Other Parts of the Project
+1. Tableau Public Dashboard: [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link)
+2. Scrapped Dataset: [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
+
 ## Project Goal
 Giving the project a data analysis tag will help us classify it more broadly. But after breaking down the wider concept, we can extract the project's goal, which is as follows:
 
@@ -23,10 +27,6 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 
 1. **Exploratory Data Analysis**: Analyzing the data thoroughly and utilizing visual means to learn various data characteristics.
 2. **Automatic testing** of the scraper files.
-
-## Other Parts of the Project
-1. Tableau Public Dashboard: [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link)
-2. Scrapped Dataset: [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
 
 ## Findings and Observations
 
