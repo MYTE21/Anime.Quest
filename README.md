@@ -55,46 +55,23 @@ contains a visualization of those results. Here, we list our findings in bullet 
 2. Information about `anime countries` is gathered from the [Every Country's Favourite Anime](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#) website.
 3. Data of `countries that watch the most anime` are collected using scraping from the [List of Countries that Watch the Most Anime](https://skdesu.com/en/list-of-countries-that-watch-the-most-anime/) website.
 
-...s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Used technologies
-* python 3.11
-* selenium 4.10.0
-* pandas 2.0.2
-
-```powershell
-pip install -r requirements.txt
-```
----
-1. Anime Data: Scrapped by running `anime_scraper.py` file.
-2. Country Data: Download from [Anime Top By Country Dataset](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#) website.
-3. Watching Data: Scrapped by running `anime_watching_scraper.py` file.
-
-## Tableau
-### Processed Anime Data
-1. Media Type
-2. Top 20 Anime With The Most Episodes
-3. Anime Production Count by Year
-4. Anime Production by Release Season
-5. Top 15 TV Anime
-6. Top 20 Popular Anime 
-
-Click [Anime Quest](#anime-quest)
+## Build-Run and Recreate Results
+1. Clone the project:
+    ```powershell
+    git clone https://github.com/MYTE21/Anime.Planet.git
+    ```
+2. Initialize and activate virtual environment:
+    ```powershell
+   py -m venv venv
+   venv/Scripts/Activate.ps1
+    ```
+3. Install dependencies:
+    ```powershell
+   pip install -r requirements.txt
+    ```
+4. Download [ChromeDriver](https://chromedriver.chromium.org/downloads)
+5. Run the scraper:
+    ```powershell
+   python scraper/anime_scraper.py
+   python scraper/anime_watching_scraper.py
+    ```
