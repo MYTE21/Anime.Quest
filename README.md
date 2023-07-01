@@ -50,6 +50,16 @@ contains a visualization of those results. Here, we list our findings in bullet 
 2. The most popular genres of anime overall are `Action`, `Comedy`, `Drama`, and `Adventure`.
 3. Most of the anime-watching countries watch `Naruto` and `Pokemon`.
 
+### Resources and Websites
+1. `Anime details` are collected using scraping from the [Anime Planet](https://www.anime-planet.com/) website.
+2. Information about `anime countries` is gathered from the [Every Country's Favourite Anime](https://e.infogram.com/f2bfaed8-7046-43e6-aa41-367848a326ef?parent_url=https%3A%2F%2Fwww.broadbandchoices.co.uk%2Ffeatures%2Fevery-countrys-favourite-anime&src=embed#) website.
+3. Data of countries that watch the most anime are collected using scraping from the [List of Countries that Watch the Most Anime](https://skdesu.com/en/list-of-countries-that-watch-the-most-anime/) website.
+
+...s
+
+
+
+
 
 
 
