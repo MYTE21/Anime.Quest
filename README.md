@@ -34,6 +34,11 @@ The tableau, [Anime Quest: Visualization](https://public.tableau.com/views/Anime
 contains a visualization of those results. Here, we list our findings in bullet points for discussion. Let's get started.
 
 ### Anime: General Idea
+
+![Anime: General Idea Visualization Image](assets/anime_general_idea.png)
+
+[🎴 **Visualization Link**](https://public.tableau.com/app/profile/myte/viz/AnimeQuestVisualization/AnimeGeneralIdea)
+
 1. The most common form of media for anime production is `TV`.
 2. The most successful anime production company is `Toei Animation`.
 3. `Spring` season marks the release of more than 30% of anime, with `Fall` coming in slightly behind.
