@@ -75,5 +75,19 @@ contains a visualization of those results. Here, we list our findings in bullet 
    python scraper/anime_scraper.py
    python scraper/anime_watching_scraper.py
     ```
+## Contributors
+**Project Owner**
 
-# TODO: Implement Thread, make a parent runner, make the readme more user friendly.
+| <img src = "assets/md_yasmi_tohabar.jpg" width="70" alt=""> | Md Yasmi Tohabar | [www.linkedin.com/in/myte/](https://www.linkedin.com/in/myte/) |
+|-------------------------------------------------------------|------------------|----------------------------------------------------------------|
+
+## License
+
+The [Anime Quest](https://github.com/MYTE21/IC.Photography.Styles) project is released under the [MIT License](https://github.com/MYTE21/Anime.Quest/blob/main/LICENSE).
+Feel free to use, modify, and distribute the project in accordance with the license terms.
+
+## Contact
+
+For any inquiries or questions regarding the [Anime Quest](https://github.com/MYTE21/IC.Photography.Styles) project,
+please contact at [yasmi.tohabar@gmail.com](mailto:yasmi.tohabar@gmail.com).
+We appreciate your interest and feedback.
