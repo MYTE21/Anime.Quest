@@ -39,6 +39,10 @@ that watch the most anime.
 
 ![Anime Data Image](assets/anime_data.png)
 
+The scraper files for this dataset are located in the project's [scraper](scraper) folder. 
+You can find out more about this dataset at [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data) 
+on [Kaggle](https://www.kaggle.com/).
+
 ## Findings and Observations
 Our investigations and observations can be divided Into `3` *distinct categories*. 
 The tableau, [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link), 
