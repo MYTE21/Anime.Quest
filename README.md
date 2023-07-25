@@ -1,4 +1,4 @@
-`🧶 Active`
+`🎭 Active`
 # Anime Quest
 ![Anime Theme Image](assets/anime_theme.jpg)
 
@@ -15,8 +15,8 @@ to extract anime information from the [Anime Planet](https://anime-planet.com/) 
 [Tableau Public](https://public.tableau.com/app/discover) is used to produce visualizations.
 
 ## Other Parts of the Project
-1. Tableau Public Dashboard: [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link)
-2. Scrapped Dataset: [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
+1. Scrapped Dataset: [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
+2. Tableau Public Dashboard: [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ## Project Goal
 Giving the project a data analysis tag will help us classify it more broadly. But after breaking down the wider concept, we can extract the project's goal, which is as follows:
@@ -30,6 +30,15 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 1. **Exploratory Data Analysis**: Analyzing the data thoroughly and utilizing visual means to learn various data characteristics.
 2. **Automatic testing** of the scraper files.
 
+## Anime Quest Dataset
+[Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data) 
+contains information about [Anime](https://en.wikipedia.org/wiki/Anime) scraped from 
+[Anime Planet](https://www.anime-planet.com/) on 28/06/2023. It contains information about anime 
+(episodes, aired date, rating, genre, etc.), and favorite anime based on the countries and top countries 
+that watch the most anime.
+
+![Anime Data Image](assets/anime_data.png)
+
 ## Findings and Observations
 Our investigations and observations can be divided Into `3` *distinct categories*. 
 The tableau, [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link), 
@@ -39,7 +48,7 @@ contains a visualization of those results. Here, we list our findings in bullet 
 
 ![Anime: General Idea Visualization Image](assets/anime_general_idea.png)
 
-[🎴 **Visualization Link**](https://public.tableau.com/app/profile/myte/viz/AnimeQuestVisualization/AnimeGeneralIdea)
+[🎴 Visualization Link](https://public.tableau.com/app/profile/myte/viz/AnimeQuestVisualization/AnimeGeneralIdea)
 
 1. The most common form of media for anime production is `TV`.
 2. The most successful anime production company is `Toei Animation`.
@@ -51,7 +60,7 @@ contains a visualization of those results. Here, we list our findings in bullet 
 
 ![Anime: Top-Notch Visualization Image](assets/anime_top_notch.png)
 
-[🎴 **Visualization Link**](https://public.tableau.com/views/AnimeQuestVisualization/AnimeTop-Notch?:language=en-US&:display_count=n&:origin=viz_share_link)
+[🎴 Visualization Link](https://public.tableau.com/views/AnimeQuestVisualization/AnimeTop-Notch?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 1. `Sazae-san` has 2,706 episodes total, which is the most ever cast.
 2. The most popular anime series are `Naruto`, `Attach on Titan`, and `Fullmetal Alchemist: Brotherhood`.
@@ -61,7 +70,7 @@ contains a visualization of those results. Here, we list our findings in bullet 
 
 ![Anime: Global View Visualization Image](assets/anime_global_view.png)
 
-[🎴 **Visualization Link**](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGlobalView?:language=en-US&:display_count=n&:origin=viz_share_link)
+[🎴 Visualization Link](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGlobalView?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 1. Considering the top 5 anime creators, we can find that the top genre of their writing is `Adventure`. There is also `Action` and `Mystery`.
 2. The most popular genres of anime overall are `Action`, `Comedy`, `Drama`, and `Adventure`.
