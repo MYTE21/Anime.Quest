@@ -1,5 +1,7 @@
 `🧶 Active`
 # Anime Quest
+![Anime Theme Image](assets/anime_theme.jpg)
+
 [Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling, 
 creative sensibilities, and cultural allegiances, making it a well-liked and significant form of entertainment all 
 around the world. It was created in Japan and has since spread throughout the world.
@@ -46,11 +48,21 @@ contains a visualization of those results. Here, we list our findings in bullet 
 5. Production of anime drastically rose after the year 2000 and `peaked in 2018`. The second and third most productive years for anime production are, respectively, 2017 and 2021.
 
 ### Anime: Top-Notch
+
+![Anime: Top-Notch Visualization Image](assets/anime_top_notch.png)
+
+[🎴 **Visualization Link**](https://public.tableau.com/views/AnimeQuestVisualization/AnimeTop-Notch?:language=en-US&:display_count=n&:origin=viz_share_link)
+
 1. `Sazae-san` has 2,706 episodes total, which is the most ever cast.
 2. The most popular anime series are `Naruto`, `Attach on Titan`, and `Fullmetal Alchemist: Brotherhood`.
 3. The majority of the top 15 TV anime fall under the area of `Action`.
 
 ### Anime: Global View
+
+![Anime: Global View Visualization Image](assets/anime_global_view.png)
+
+[🎴 **Visualization Link**](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGlobalView?:language=en-US&:display_count=n&:origin=viz_share_link)
+
 1. Considering the top 5 anime creators, we can find that the top genre of their writing is `Adventure`. There is also `Action` and `Mystery`.
 2. The most popular genres of anime overall are `Action`, `Comedy`, `Drama`, and `Adventure`.
 3. Most of the anime-watching countries watch `Naruto` and `Pokemon`.
