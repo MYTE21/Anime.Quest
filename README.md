@@ -30,7 +30,7 @@ Giving the project a data analysis tag will help us classify it more broadly. Bu
 1. **Exploratory Data Analysis**: Analyzing the data thoroughly and utilizing visual means to learn various data characteristics.
 2. **Automatic testing** of the scraper files.
 
-## Anime Quest Dataset
+## Anime Quest Dataset [🔗](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data)
 [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data) 
 contains information about [Anime](https://en.wikipedia.org/wiki/Anime) scraped from 
 [Anime Planet](https://www.anime-planet.com/) on 28/06/2023. It contains information about anime 
@@ -44,11 +44,9 @@ Our investigations and observations can be divided Into `3` *distinct categories
 The tableau, [Anime Quest: Visualization](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link), 
 contains a visualization of those results. Here, we list our findings in bullet points for discussion. Let's get started.
 
-### Anime: General Idea
+### Anime: General Idea [🔗](https://public.tableau.com/app/profile/myte/viz/AnimeQuestVisualization/AnimeGeneralIdea)
 
 ![Anime: General Idea Visualization Image](assets/anime_general_idea.png)
-
-[🎴 Visualization Link](https://public.tableau.com/app/profile/myte/viz/AnimeQuestVisualization/AnimeGeneralIdea)
 
 1. The most common form of media for anime production is `TV`.
 2. The most successful anime production company is `Toei Animation`.
@@ -56,21 +54,17 @@ contains a visualization of those results. Here, we list our findings in bullet 
 4. The top 3 countries where anime is watched the most are `Japan`, `the US`, and `the Philippines`.
 5. Production of anime drastically rose after the year 2000 and `peaked in 2018`. The second and third most productive years for anime production are, respectively, 2017 and 2021.
 
-### Anime: Top-Notch
+### Anime: Top-Notch [🔗](https://public.tableau.com/views/AnimeQuestVisualization/AnimeTop-Notch?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ![Anime: Top-Notch Visualization Image](assets/anime_top_notch.png)
-
-[🎴 Visualization Link](https://public.tableau.com/views/AnimeQuestVisualization/AnimeTop-Notch?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 1. `Sazae-san` has 2,706 episodes total, which is the most ever cast.
 2. The most popular anime series are `Naruto`, `Attach on Titan`, and `Fullmetal Alchemist: Brotherhood`.
 3. The majority of the top 15 TV anime fall under the area of `Action`.
 
-### Anime: Global View
+### Anime: Global View [🔗](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGlobalView?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ![Anime: Global View Visualization Image](assets/anime_global_view.png)
-
-[🎴 Visualization Link](https://public.tableau.com/views/AnimeQuestVisualization/AnimeGlobalView?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 1. Considering the top 5 anime creators, we can find that the top genre of their writing is `Adventure`. There is also `Action` and `Mystery`.
 2. The most popular genres of anime overall are `Action`, `Comedy`, `Drama`, and `Adventure`.
