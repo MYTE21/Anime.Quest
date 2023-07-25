@@ -96,8 +96,10 @@ contains a visualization of those results. Here, we list our findings in bullet 
 4. Download [ChromeDriver](https://chromedriver.chromium.org/downloads)
 5. Run the scraper:
     ```powershell
-   python scraper/anime_scraper.py
-   python scraper/anime_watching_scraper.py
+   cd scraper
+   
+   python anime_scraper.py
+   python anime_watching_scraper.py
     ```
 ## Contributors
 **Project Owner**
