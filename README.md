@@ -39,7 +39,7 @@ that watch the most anime.
 
 ![Anime Data Image](assets/anime_data.png)
 
-The scraper files for this dataset are located in the project's [scraper](scraper) folder. 
+The scraper files for this dataset are located in the project's [scrapers](scrapers) folder. 
 You can find out more about this dataset at [Anime Quest Dataset](https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data) 
 on [Kaggle](https://www.kaggle.com/).
 
@@ -94,11 +94,12 @@ contains a visualization of those results. Here, we list our findings in bullet 
    pip install -r requirements.txt
     ```
 4. Download [ChromeDriver](https://chromedriver.chromium.org/downloads)
-5. Run the scraper:
+5. Run the scrapers:
     ```powershell
-   cd scraper
+   cd scrapers
    
    python anime_scraper.py
+   
    python anime_watching_scraper.py
     ```
 ## Contributors
