@@ -1,6 +1,6 @@
 from dummy_data.given_data import urls
 from dummy_data.expected_data import anime_info
-from scraper.anime_scraper import anime_details
+from scrapers.anime_scraper import anime_details
 
 
 def test_anime_details():
