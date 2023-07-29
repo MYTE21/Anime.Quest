@@ -95,13 +95,19 @@ contains a visualization of those results. Here, we list our findings in bullet 
     ```
 4. Download [ChromeDriver](https://chromedriver.chromium.org/downloads)
 5. Run the scrapers:
-    ```powershell
-   cd scrapers
-   
-   python anime_scraper.py
-   
-   python anime_watching_scraper.py
-    ```
+   1. Change the directory to `scrapers`:
+       ```powershell
+      cd scrapers
+      ```
+   2. For Collecting `Anime Details`:
+      ```powershell
+      python anime_scraper.py
+      ```
+   3. For collecting `Anime Watch` data:
+      ```powershell
+      python anime_watching_scraper.py
+      ```
+
 ## Contributors
 **Project Owner**
 
