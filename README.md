@@ -1,4 +1,4 @@
-`🎭 Active`
+`〽️ active`
 # Anime Quest
 ![Anime Theme Image](assets/anime_theme.jpg)
 
