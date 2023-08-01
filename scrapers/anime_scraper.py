@@ -172,14 +172,14 @@ def get_all_anime():
 
 
 def read_page_no():
-    with open("../scraper/page_pointer.json", "r") as file:
+    with open("../scrapers/page_pointer.json", "r") as file:
         data = json.load(file)
 
     return data["start"], data["end"]
 
 
 def write_page_no(start, end):
-    with open("../scraper/page_pointer.json", "w") as file:
+    with open("../scrapers/page_pointer.json", "w") as file:
         data = {"start": start, "end": end}
         json.dump(data, file)
 
