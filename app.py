@@ -3,7 +3,11 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 
-uri = "mongodb+srv://ml557:hhDyMRdbvUMD6cGz@anime-quest.yomhl8y.mongodb.net/?retryWrites=true&w=majority"
+username = st.secrets.mongo.username
+password = st.secrets.mongo.password
+cluster_name = st.secrets.mongo.cluster_name
+
+uri = f"mongodb+srv://{username}:{password}@{cluster_name}.yomhl8y.mongodb.net/?retryWrites=true&w=majority"
 
 client = MongoClient(uri, server_api=ServerApi('1'))
 
