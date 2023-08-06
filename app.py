@@ -16,7 +16,7 @@ collection = db["anime_country"]
 
 countries = collection.find()
 
-for country in countries:
+for country in countries[:10]:
     st.write(country["Country"])
 
 st.write("DONE..!")
