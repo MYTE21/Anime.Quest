@@ -3,9 +3,9 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
 
-username = st.secrets.mongo.username
-password = st.secrets.mongo.password
-cluster_name = st.secrets.mongo.cluster_name
+username = st.secrets["username"]
+password = st.secrets["password"]
+cluster_name = st.secrets["cluster_name"]
 
 uri = f"mongodb+srv://{username}:{password}@{cluster_name}.yomhl8y.mongodb.net/?retryWrites=true&w=majority"
 
