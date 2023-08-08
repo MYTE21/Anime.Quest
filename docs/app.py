@@ -7,7 +7,7 @@ from pymongo.server_api import ServerApi
 # Page Configuration
 st.set_page_config(
     page_title="Anime Quest",
-    page_icon="assets/page_icon.png",
+    page_icon="../assets/page_icon.png",
     menu_items={
         'About': "This is about section..!",
         'Report a bug': "https://github.com/MYTE21/Anime.Quest/issues/new",
