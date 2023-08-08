@@ -17,6 +17,9 @@ st.set_page_config(
 )
 
 
+st.header("Anime Quest")
+
+
 # Connection Initialization
 @st.cache_resource
 def initialize_connection():
