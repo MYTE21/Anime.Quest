@@ -5,6 +5,9 @@ from PIL import Image
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
+from streamlit_extras.app_logo import add_logo
+from streamlit_extras.mention import mention
+
 # Page Configuration
 st.set_page_config(
         page_title="Anime Quest",
@@ -17,6 +20,7 @@ st.set_page_config(
 
 
 st.header("Anime Quest")
+add_logo("docs/icons/anime_quest_icon.png", height=3)
 image = Image.open("assets/anime_theme.jpg")
 st.image(image)
 
@@ -34,7 +38,33 @@ to extract anime information from the [Anime Planet](https://anime-planet.com/) 
 [Tableau Public](https://public.tableau.com/app/discover) is used to produce visualizations.
 """
 
-st.divider()
+# st.divider()
+
+"""
+### Other Parts of this Project
+"""
+
+github_column, kaggle_column, tableau_column = st.columns(3)
+with github_column:
+    mention(
+        label="Anime.Quest",
+        icon="github",
+        url="https://github.com/MYTE21/Anime.Quest"
+    )
+
+with kaggle_column:
+    mention(
+        label="Anime Quest Dataset",
+        icon="🎲",
+        url="https://www.kaggle.com/datasets/myte21/anime-quest-an-epic-adventure-through-anime-data"
+    )
+
+with tableau_column:
+    mention(
+        label="Anime Quest: Visualization",
+        icon="🎴",
+        url="https://public.tableau.com/views/AnimeQuestVisualization/AnimeGeneralIdea?:language=en-US&:display_count=n&:origin=viz_share_link"
+    )
 
 
 # Database Connection Initialization
