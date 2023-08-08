@@ -8,7 +8,7 @@ around the world. It was created in Japan and has since spread throughout the wo
 
 **What Is `Anime Quest`, though? 🤔**
 
-It’s a treasure of the anime world 🪙... Just kidding 😂… 
+It's a treasure of the anime world 🪙... Just kidding 😂… 
 
 This public project is called Anime Quest, which used the [Selenium Python](https://selenium-python.readthedocs.io/) 
 to extract anime information from the [Anime Planet](https://anime-planet.com/) website. After processing the dataset,

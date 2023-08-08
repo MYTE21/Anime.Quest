@@ -1,5 +1,6 @@
 import streamlit as st
-# from utilities.dataframe_getter import get_anime_watch_df
 
 st.write("Global View Page..!")
-# st.dataframe(get_anime_watch_df)
+st.write("Anime Compacted Shape: ", st.session_state["anime_compacted"].shape)
+st.write("Anime Country Shape: ", st.session_state["anime_country"].shape)
+st.write("Anime Watch Shape: ", st.session_state["anime_watch"].shape)

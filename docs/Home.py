@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -16,6 +17,24 @@ st.set_page_config(
 
 
 st.header("Anime Quest")
+image = Image.open("assets/anime_theme.jpg")
+st.image(image)
+
+"""
+[Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling, 
+creative sensibilities, and cultural allegiances, making it a well-liked and significant form of entertainment all 
+around the world. It was created in Japan and has since spread throughout the world.
+
+**What Is `Anime Quest`, though? 🤔**
+
+It's a treasure of the anime world 🪙... Just kidding 😂… 
+
+This public project is called `Anime Quest`, which used the [Selenium Python](https://selenium-python.readthedocs.io/) 
+to extract anime information from the [Anime Planet](https://anime-planet.com/) website. After processing the dataset,
+[Tableau Public](https://public.tableau.com/app/discover) is used to produce visualizations.
+"""
+
+st.divider()
 
 
 # Database Connection Initialization
@@ -61,15 +80,20 @@ def get_anime_watch_df():
     return dataframe_anime_watch
 
 
-if "anime_compacted" not in st.session_state:
-    st.session_state["anime_compacted"] = get_anime_compacted_df()
+def store_sessions():
+    if "anime_compacted" not in st.session_state:
+        st.toast("🧲 Getting Anime Compacted Data ..!")
+        st.session_state["anime_compacted"] = get_anime_compacted_df()
 
-if "anime_country" not in st.session_state:
-    st.session_state["anime_country"] = get_anime_country_df()
+    if "anime_country" not in st.session_state:
+        st.toast("🧲 Getting Anime Compacted Data ..!")
+        st.session_state["anime_country"] = get_anime_country_df()
 
-if "anime_watch" not in st.session_state:
-    st.session_state["anime_watch"] = get_anime_watch_df()
+    if "anime_watch" not in st.session_state:
+        st.toast("🧲 Getting Anime Compacted Data ..!")
+        st.session_state["anime_watch"] = get_anime_watch_df()
 
-st.write("Anime Compacted Shape: ", st.session_state["anime_compacted"].shape)
-st.write("Anime Country Shape: ", st.session_state["anime_country"].shape)
-st.write("Anime Watch Shape: ", st.session_state["anime_watch"].shape)
+
+with st.spinner("💫 Collecting Data ..."):
+    store_sessions()
+    st.toast("🎉 Data Collection Completed..!")
