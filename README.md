@@ -128,5 +128,5 @@ We appreciate your interest and feedback.
 ## Extra
 ### Run Streamlit Application
 ```powershell
-streamlit run docs/app.py
+streamlit run docs/Home.py
 ```
