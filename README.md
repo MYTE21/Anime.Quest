@@ -124,3 +124,9 @@ Feel free to use, modify, and distribute the project in accordance with the lice
 For any inquiries or questions regarding the [Anime Quest](https://github.com/MYTE21/IC.Photography.Styles) project,
 please contact at [yasmi.tohabar@gmail.com](mailto:yasmi.tohabar@gmail.com).
 We appreciate your interest and feedback.
+
+## Extra
+### Run Streamlit Application
+```powershell
+streamlit run docs/app.py
+```
