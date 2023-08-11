@@ -12,6 +12,10 @@ st.set_page_config(
         }
 )
 
+
+from utilities.database import get_anime_compacted_df, get_anime_country_df, get_anime_watch_df
+
+
 st.header("Anime Quest Dataset")
 add_logo("docs/icons/anime_quest_icon.png", height=3)
 
@@ -51,3 +55,9 @@ with anime_watch_tab:
     [🌐List of Countries that Watch the Most Anime](https://skdesu.com/en/list-of-countries-that-watch-the-most-anime/) 
     website.
     """
+
+
+st.write("About Dataset Page..!")
+st.write("Anime Compacted Shape: ", get_anime_compacted_df().shape)
+st.write("Anime Country Shape: ", get_anime_country_df().shape)
+st.write("Anime Watch Shape: ", get_anime_watch_df().shape)

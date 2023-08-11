@@ -1,9 +1,5 @@
 import streamlit as st
-import pandas as pd
 from PIL import Image
-
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
 
 from streamlit_extras.app_logo import add_logo
 from streamlit_extras.mention import mention
@@ -17,6 +13,8 @@ st.set_page_config(
             'Report a bug': "https://github.com/MYTE21/Anime.Quest/issues/new",
         }
     )
+
+from utilities.database import get_anime_compacted_df, get_anime_country_df, get_anime_watch_df
 
 
 st.header("Anime Quest")
@@ -67,63 +65,7 @@ with tableau_column:
     )
 
 
-# Database Connection Initialization
-@st.cache_resource
-def initialize_connection():
-    username = st.secrets["username"]
-    password = st.secrets["password"]
-    cluster_name = st.secrets["cluster_name"]
-
-    uri = f"mongodb+srv://{username}:{password}@{cluster_name}.yomhl8y.mongodb.net/?retryWrites=true&w=majority"
-    return MongoClient(uri, server_api=ServerApi('1'))
-
-
-client = initialize_connection()
-
-
-@st.cache_resource
-def get_database():
-    return client["anime_quest"]
-
-
-@st.cache_resource
-def get_anime_compacted_df():
-    db = get_database()
-    collection_compacted = db["anime_compacted"].find()
-    dataframe_anime_compacted = pd.DataFrame(collection_compacted)
-    return dataframe_anime_compacted
-
-
-@st.cache_resource
-def get_anime_country_df():
-    db = get_database()
-    collection_country = db["anime_country"].find()
-    dataframe_anime_country = pd.DataFrame(collection_country)
-    return dataframe_anime_country
-
-
-@st.cache_resource
-def get_anime_watch_df():
-    db = get_database()
-    collection_watch = db["anime_watch"].find()
-    dataframe_anime_watch = pd.DataFrame(collection_watch)
-    return dataframe_anime_watch
-
-
-def store_sessions():
-    if "anime_compacted" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_compacted"] = get_anime_compacted_df()
-
-    if "anime_country" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_country"] = get_anime_country_df()
-
-    if "anime_watch" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_watch"] = get_anime_watch_df()
-
-
-with st.spinner("💫 Collecting Data ..."):
-    store_sessions()
-    st.toast("🎉 Data Collection Completed..!")
+st.write("General Idea Page..!")
+st.write("Anime Compacted Shape: ", get_anime_compacted_df().shape)
+st.write("Anime Country Shape: ", get_anime_country_df().shape)
+st.write("Anime Watch Shape: ", get_anime_watch_df().shape)
