@@ -45,26 +45,3 @@ def get_anime_watch_df():
     collection_watch = db["anime_watch"].find()
     dataframe_anime_watch = pd.DataFrame(collection_watch)
     return dataframe_anime_watch
-
-
-def store_sessions():
-    if "anime_compacted" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_compacted"] = get_anime_compacted_df()
-
-    if "anime_country" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_country"] = get_anime_country_df()
-
-    if "anime_watch" not in st.session_state:
-        st.toast("🧲 Getting Anime Compacted Data ..!")
-        st.session_state["anime_watch"] = get_anime_watch_df()
-
-
-with st.spinner("💫 Collecting Data ..."):
-    store_sessions()
-    st.toast("🎉 Data Collection Completed..!")
-
-
-if __name__ == "__main":
-    pass

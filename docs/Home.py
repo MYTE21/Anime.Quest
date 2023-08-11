@@ -23,15 +23,15 @@ image = Image.open("assets/anime_theme.jpg")
 st.image(image)
 
 """
-[Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling, 
-creative sensibilities, and cultural allegiances, making it a well-liked and significant form of entertainment all 
+[Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling,
+creative sensibilities, and cultural allegiances, making it a well-liked and significant form of entertainment all
 around the world. It was created in Japan and has since spread throughout the world.
 
 **What Is `Anime Quest`, though? 🤔**
 
-It's a treasure of the anime world 🪙... Just kidding 😂… 
+It's a treasure of the anime world 🪙... Just kidding 😂…
 
-This public project is called `Anime Quest`, which used the [Selenium Python](https://selenium-python.readthedocs.io/) 
+This public project is called `Anime Quest`, which used the [Selenium Python](https://selenium-python.readthedocs.io/)
 to extract anime information from the [Anime Planet](https://anime-planet.com/) website. After processing the dataset,
 [Tableau Public](https://public.tableau.com/app/discover) is used to produce visualizations.
 """
