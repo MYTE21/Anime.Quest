@@ -21,11 +21,12 @@ from utilities.database import get_anime_compacted_df, get_anime_country_df, get
 
 
 st.header("Anime Quest")
+st.caption("Data collection and analysis to discover fascinating information about anime")
+st.info("🛠️ Under Development")
 add_logo("docs/icons/anime_quest_icon.png", height=3)
 image = Image.open("assets/anime_theme.jpg")
 st.image(image)
 
-st.info("🛠️ Under Development")
 
 """
 [Anime](https://en.wikipedia.org/wiki/Anime) is a distinct type of animation that features distinctive storytelling,
