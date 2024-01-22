@@ -107,6 +107,10 @@ contains a visualization of those results. Here, we list our findings in bullet 
       ```powershell
       python anime_watching_scraper.py
       ```
+6. Run Streamlit Application
+   ```powershell
+   streamlit run docs/Home.py
+   ```
 
 ## Contributors
 **Project Owner**
@@ -124,9 +128,3 @@ Feel free to use, modify, and distribute the project in accordance with the lice
 For any inquiries or questions regarding the [Anime Quest](https://github.com/MYTE21/IC.Photography.Styles) project,
 please contact at [yasmi.tohabar@gmail.com](mailto:yasmi.tohabar@gmail.com).
 We appreciate your interest and feedback.
-
-## Extra
-### Run Streamlit Application
-```powershell
-streamlit run docs/Home.py
-```
